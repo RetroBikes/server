@@ -19,7 +19,7 @@ const allowCrossDomain = (req: any, res: any, next: any) => {
   }
 };
 
-const port = Number(3000);
+const port = Number(process.env.PORT || 2567);
 const app = express();
 
 
