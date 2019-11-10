@@ -1,0 +1,20 @@
+{
+    "clientsToPlay": 2,
+    "areaVirtualSize": 100,
+    "initialStates": [
+        {
+            "startPosition": {
+                "x": 49,
+                "y": -20
+            },
+            "initialDirection": "up"
+        },
+        {
+            "startPosition": {
+                "x": 51,
+                "y": -20
+            },
+            "initialDirection": "up"
+        }
+    ]
+}
