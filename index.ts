@@ -1,29 +1,15 @@
 import http from 'http';
 import express from 'express';
+import cors from 'cors';
 import { Server } from 'colyseus';
 import { monitor } from '@colyseus/monitor';
 
 import GameRoom from './src/rooms/GameRoom';
 
-const allowCrossDomain = (req: any, res: any, next: any) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
-
-  // intercept OPTIONS method
-  if ('OPTIONS' == req.method) {
-    res.send(200);
-  }
-  else {
-    next();
-  }
-};
-
 const port = Number(process.env.PORT || 2567);
 const app = express();
 
-
-app.use(allowCrossDomain);
+app.use(cors());
 
 app.use(express.json());
 
